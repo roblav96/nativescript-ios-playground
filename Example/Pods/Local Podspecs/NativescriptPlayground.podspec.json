@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of NativescriptPlayground.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/NativescriptPlayground",
+  "homepage": "https://github.com/roblav96/NativescriptPlayground",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,22 @@
     "roblav96": "roblav96@gmx.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/NativescriptPlayground.git",
+    "git": "https://github.com/roblav96/NativescriptPlayground.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "NativescriptPlayground/Classes/**/*"
+  "source_files": "NativescriptPlayground/Classes/**/*",
+  "pod_target_xcconfig": {
+    "SWIFT_VERSION": "3.0"
+  },
+  "dependencies": {
+    "Bolts": [
+
+    ],
+    "TesseractOCRiOS": [
+
+    ]
+  }
 }

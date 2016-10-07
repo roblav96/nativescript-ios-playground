@@ -1,5 +1,14 @@
 PODS:
-  - NativescriptPlayground (0.1.0)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - NativescriptPlayground (0.1.0):
+    - Bolts
+    - TesseractOCRiOS
+  - TesseractOCRiOS (4.0.0)
 
 DEPENDENCIES:
   - NativescriptPlayground (from `../`)
@@ -9,8 +18,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  NativescriptPlayground: c8e816eb4df4a555df823e71fc5c8642d46dc814
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  NativescriptPlayground: 300ace2116aa7ff49443ca534ff889abf78d9c62
+  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
 
-PODFILE CHECKSUM: a752624f338376f5354c2067be102d4039e88e8b
+PODFILE CHECKSUM: a37b805dc9e4843e129b378e8888e22661d26b61
 
 COCOAPODS: 1.1.0.rc.2
