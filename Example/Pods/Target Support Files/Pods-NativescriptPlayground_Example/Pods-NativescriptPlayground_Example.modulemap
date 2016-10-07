@@ -1,0 +1,6 @@
+framework module Pods_NativescriptPlayground_Example {
+  umbrella header "Pods-NativescriptPlayground_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

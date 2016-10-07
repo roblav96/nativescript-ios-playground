@@ -1,0 +1,16 @@
+PODS:
+  - NativescriptPlayground (0.1.0)
+
+DEPENDENCIES:
+  - NativescriptPlayground (from `../`)
+
+EXTERNAL SOURCES:
+  NativescriptPlayground:
+    :path: ../
+
+SPEC CHECKSUMS:
+  NativescriptPlayground: c8e816eb4df4a555df823e71fc5c8642d46dc814
+
+PODFILE CHECKSUM: a752624f338376f5354c2067be102d4039e88e8b
+
+COCOAPODS: 1.1.0.rc.2

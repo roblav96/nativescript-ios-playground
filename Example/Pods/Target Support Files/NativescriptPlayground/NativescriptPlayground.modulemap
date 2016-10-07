@@ -1,0 +1,6 @@
+framework module NativescriptPlayground {
+  umbrella header "NativescriptPlayground-umbrella.h"
+
+  export *
+  module * { export * }
+}
