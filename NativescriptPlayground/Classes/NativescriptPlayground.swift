@@ -5,7 +5,7 @@
 import Foundation
 import Contacts
 import Bolts
-import TesseractOCR
+//import TesseractOCR
 
 
 
@@ -92,26 +92,26 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
     
     
     
-    open func recognizeAsyncBolts(TESS: G8Tesseract) -> BFTask<AnyObject> {
-        let task = BFTaskCompletionSource<AnyObject>()
-        
-        recognizeOnBackgroundThread(TESS: TESS, completion: {() -> Void in
-            task.setResult(nil)
-        })
-        
-        let sendi: Any = task.task
-        return sendi as! BFTask<AnyObject>
-    }
-    
-    open func recognizeOnBackgroundThread ( TESS: G8Tesseract, completion:@escaping() -> Void) {
-        
-        DispatchQueue.global(qos: .userInitiated).async(execute: { () -> Void in
-            TESS.recognize()
-            DispatchQueue.main.async(execute: { () -> Void in
-                completion()
-            })
-        })
-    }
+//    open func recognizeAsyncBolts(TESS: G8Tesseract) -> BFTask<AnyObject> {
+//        let task = BFTaskCompletionSource<AnyObject>()
+//        
+//        recognizeOnBackgroundThread(TESS: TESS, completion: {() -> Void in
+//            task.setResult(nil)
+//        })
+//        
+//        let sendi: Any = task.task
+//        return sendi as! BFTask<AnyObject>
+//    }
+//    
+//    open func recognizeOnBackgroundThread ( TESS: G8Tesseract, completion:@escaping() -> Void) {
+//        
+//        DispatchQueue.global(qos: .userInitiated).async(execute: { () -> Void in
+//            TESS.recognize()
+//            DispatchQueue.main.async(execute: { () -> Void in
+//                completion()
+//            })
+//        })
+//    }
     
     
     

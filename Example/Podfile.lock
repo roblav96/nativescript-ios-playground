@@ -7,8 +7,6 @@ PODS:
   - Bolts/Tasks (1.8.4)
   - NativescriptPlayground (0.1.0):
     - Bolts
-    - TesseractOCRiOS
-  - TesseractOCRiOS (4.0.0)
 
 DEPENDENCIES:
   - NativescriptPlayground (from `../`)
@@ -19,8 +17,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  NativescriptPlayground: c582c4a9bcb611b01b080fb84ac194c074bf0600
-  TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
+  NativescriptPlayground: 3a3d41890752e12a9e1f40ad92b95082a96e9a92
 
 PODFILE CHECKSUM: a37b805dc9e4843e129b378e8888e22661d26b61
 
