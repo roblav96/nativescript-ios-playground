@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B22C2965D81512FB6E3F65A28104D66 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8060FBC4B08E4023BD2A433518FA8 /* ReplaceMe.swift */; };
+		0B22C2965D81512FB6E3F65A28104D66 /* NativescriptPlayground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF8060FBC4B08E4023BD2A433518FA8 /* NativescriptPlayground.swift */; };
 		79196E6C781FEDBFC5BEAB898733D9B6 /* Pods-NativescriptPlayground_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 276B24B067E29FF4F2D1567DEFB0D5FD /* Pods-NativescriptPlayground_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		79C854DD3132D186818F4A6F5BFDDF2F /* NativescriptPlayground-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0668678BB78D922B99344A6E557FE1A9 /* NativescriptPlayground-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8E1613DC669010999E1582A12752EA92 /* NativescriptPlayground-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C59B4B9EC9EC8EEDAD6F4D2B050216 /* NativescriptPlayground-dummy.m */; };
@@ -45,7 +45,7 @@
 		80EA6A347EE81D004F9B2F7181759DF4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88D3AE8D9C68D734AD71CE2ADF94BE04 /* Pods-NativescriptPlayground_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-NativescriptPlayground_Example-dummy.m"; sourceTree = "<group>"; };
 		89FBB80129506D908E377F5C133C59BB /* NativescriptPlayground.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NativescriptPlayground.xcconfig; sourceTree = "<group>"; };
-		8AF8060FBC4B08E4023BD2A433518FA8 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ReplaceMe.swift; sourceTree = "<group>"; };
+		8AF8060FBC4B08E4023BD2A433518FA8 /* NativescriptPlayground.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = NativescriptPlayground.swift; sourceTree = "<group>"; };
 		8B6BFBCC17E0EBA812ACDCC8B4B6E17D /* Pods-NativescriptPlayground_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-NativescriptPlayground_Example-resources.sh"; sourceTree = "<group>"; };
 		8CEBE91FF22481AE9515A7D814236E53 /* NativescriptPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NativescriptPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93005A1950C4F96FA2DD32469A016BD6 /* Pods-NativescriptPlayground_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-NativescriptPlayground_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		0BD721925B25D8890C97D0FD4D68B533 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				8AF8060FBC4B08E4023BD2A433518FA8 /* ReplaceMe.swift */,
+				8AF8060FBC4B08E4023BD2A433518FA8 /* NativescriptPlayground.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E1613DC669010999E1582A12752EA92 /* NativescriptPlayground-dummy.m in Sources */,
-				0B22C2965D81512FB6E3F65A28104D66 /* ReplaceMe.swift in Sources */,
+				0B22C2965D81512FB6E3F65A28104D66 /* NativescriptPlayground.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
