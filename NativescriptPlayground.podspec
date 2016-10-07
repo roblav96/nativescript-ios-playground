@@ -21,16 +21,20 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/NativescriptPlayground'
+  s.homepage         = 'https://github.com/roblav96/NativescriptPlayground'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'roblav96' => 'roblav96@gmx.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/NativescriptPlayground.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/roblav96/NativescriptPlayground.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'NativescriptPlayground/Classes/**/*'
+  
+  s.pod_target_xcconfig = {
+    'SWIFT_VERSION' => '3.0'
+  }
   
   # s.resource_bundles = {
   #   'NativescriptPlayground' => ['NativescriptPlayground/Assets/*.png']
@@ -38,5 +42,7 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Bolts'
+  s.dependency 'TesseractOCRiOS'
+  
 end
