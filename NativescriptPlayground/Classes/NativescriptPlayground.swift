@@ -5,7 +5,7 @@
 import Foundation
 import Contacts
 import Bolts
-//import TesseractOCR
+import TesseractOCR
 
 
 
