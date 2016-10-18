@@ -12,6 +12,11 @@ import FMDB
 public typealias OtherContactsHandler = (_ contacts : [CNContact] , _ error : NSError?) -> Void
 public typealias recognizeHandler = (_ error : NSError?) -> Void
 
+public struct SQLiteStatement {
+	var query: String
+	var values: [String]
+}
+
 @objc open class BoltThreads: NSObject {
     
     var contactsStore: CNContactStore?
@@ -59,7 +64,7 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
         })
     }
     
-    open func allowedContactKeys() -> [CNKeyDescriptor]{
+    open func allowedContactKeys() -> [CNKeyDescriptor] {
         return [CNContactNamePrefixKey as CNKeyDescriptor,
                 CNContactGivenNameKey as CNKeyDescriptor,
                 CNContactFamilyNameKey as CNKeyDescriptor,
@@ -92,16 +97,20 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 	
 	
 	
-    open func sqlWriteAsync(_path: String, _statements: ) -> BFTask<AnyObject> {
+
+	
+    open func sqlWriteAsync(_path: String, _statements: [SQLiteStatement]) -> BFTask<AnyObject> {
 		let task = BFTaskCompletionSource<AnyObject>()
 		
 		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: _path)
 		queue.inTransaction { db, rollback in
 			do {
                 for statement in _statements {
+					print(statement)
+                    print(statement.query)
+					print(statement.values)
                     
-                    
-                    try db?.executeUpdate("INSERT INTO myTable VALUES (?)", values: [1])
+                    try db?.executeUpdate(statement.query, values: statement.values)
                 }
                 task.setResult(true as AnyObject?)
 			} catch {
