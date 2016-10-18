@@ -99,26 +99,15 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
     
     
     open func sqlWriteAsync(Path: String, Statements: String, Version: Int) -> BFTask<AnyObject> {
-        //		print("=======================================")
-        //		print("=            SQLWRITEASYNC            =")
-        //		print("=======================================")
-        
+		
         let task = BFTaskCompletionSource<AnyObject>()
-        
         let statements: [JSON] = JSON.parse(Statements).array!
-        //		print("\n\n statements >", statements)
         
         let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: Path)
         queue.inTransaction { db, rollback in
             do {
 				db?.setUserVersion(UInt32(Version))
                 for statement in statements {
-                    //					print("\n\n statement >", statement)
-                    //					let query: String = statement["query"].stringValue
-                    //					print("\n\n query >", query)
-                    //					let values: [JSON] = statement["values"].array!
-                    //					print("\n\n values >", values)
-                    //					try db?.executeUpdate(query, values: values)
                     try db?.executeUpdate(statement["query"].stringValue, values: statement["values"].array!)
                 }
                 task.setResult(true as AnyObject?)
@@ -133,12 +122,8 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
     }
     
 	open func sqlReadAsync(Path: String, Statements: String, Version: Int) -> BFTask<AnyObject> {
-//        print("======================================")
-//        print("=            SQLREADASYNC            =")
-//        print("======================================")
-        
+
         let task = BFTaskCompletionSource<AnyObject>()
-        
         let statements: [JSON] = JSON.parse(Statements).array!
         
         let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: Path)
