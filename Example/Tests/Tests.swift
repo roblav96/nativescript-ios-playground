@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import NativescriptPlayground
+//import NativescriptPlayground
 
 class Tests: XCTestCase {
     

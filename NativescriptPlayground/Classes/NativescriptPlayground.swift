@@ -71,27 +71,48 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
                 CNContactPhoneNumbersKey as CNKeyDescriptor,
                 CNContactEmailAddressesKey as CNKeyDescriptor,
         ]
-    }
-    
-    open func getContactsBolts() -> [BFTask<CNContact>] {
-        let task = BFTaskCompletionSource<AnyObject>()
-        
-        getContactsAsync( {(contacts: [CNContact], error) in
-            if (error == nil) {
-                task.setResult(contacts as [CNContact] as AnyObject?)
-            } else {
-                task.setError(error!)
-            }
-        })
-        
-        let sendi: AnyObject = task.task
-        return sendi as! [BFTask<CNContact>]
-    }
-    
-    
-    
-    
-    
+	}
+	
+	open func getContactsBolts() -> [BFTask<CNContact>] {
+		let task = BFTaskCompletionSource<AnyObject>()
+		
+		getContactsAsync( {(contacts: [CNContact], error) in
+			if (error == nil) {
+				task.setResult(contacts as [CNContact] as AnyObject?)
+			} else {
+				task.setError(error!)
+			}
+		})
+		
+		let sendi: AnyObject = task.task
+		return sendi as! [BFTask<CNContact>]
+	}
+	
+	
+	
+	
+	
+	open func sqlWriteAsync(_path: String) -> BFTask<AnyObject> {
+		let task = BFTaskCompletionSource<AnyObject>()
+		
+		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: _path)
+		queue.inTransaction { db, rollback in
+			do {
+				try db?.executeUpdate("INSERT INTO myTable VALUES (?)", values: [1])
+			} catch {
+				print(error)
+			}
+		}
+
+		task.setResult(_path as AnyObject?)
+		
+		return task.task
+	}
+	
+	
+	
+	
+	
 //    open func recognizeAsyncBolts(TESS: G8Tesseract) -> BFTask<AnyObject> {
 //        let task = BFTaskCompletionSource<AnyObject>()
 //        
