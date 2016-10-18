@@ -100,22 +100,22 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 	
 	
 	
-	open func sqlWriteAsync(_Path: String, _Statements: String) -> BFTask<AnyObject> {
+	open func sqlWriteAsync(Path: String, Statements: String) -> BFTask<AnyObject> {
 		print("=======================================")
 		print("=            SQLWRITEASYNC            =")
 		print("=======================================")
 		
 		let task = BFTaskCompletionSource<AnyObject>()
 		
-		let statements: JSON = JSON.parse(_Statements)
+		let statements: JSON = JSON.parse(Statements)
 		print("statements >", statements)
 		print("statements.array?.count >", statements.array?.count)
 		
-		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: _Path)
+		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: Path)
 		queue.inTransaction { db, rollback in
 			do {
-				print(_Path)
-				print(_Statements)
+				print(Path)
+				print(Statements)
 				for statement in statements {
 					print(statement)
 //					print(statement.query)
