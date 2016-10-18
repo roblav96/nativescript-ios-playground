@@ -25,6 +25,9 @@
   "dependencies": {
     "Bolts": [
 
+    ],
+    "FMDB/standalone": [
+
     ]
   }
 }

@@ -5,8 +5,21 @@ PODS:
   - Bolts/AppLinks (1.8.4):
     - Bolts/Tasks
   - Bolts/Tasks (1.8.4)
+  - FMDB/standalone (2.6.2):
+    - FMDB/standalone/default (= 2.6.2)
+    - FMDB/standalone/FTS (= 2.6.2)
+  - FMDB/standalone/default (2.6.2):
+    - sqlite3
+  - FMDB/standalone/FTS (2.6.2):
+    - sqlite3/fts
   - NativescriptPlayground (0.1.0):
     - Bolts
+    - FMDB/standalone
+  - sqlite3 (3.15.0):
+    - sqlite3/common (= 3.15.0)
+  - sqlite3/common (3.15.0)
+  - sqlite3/fts (3.15.0):
+    - sqlite3/common
 
 DEPENDENCIES:
   - NativescriptPlayground (from `../`)
@@ -17,7 +30,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  NativescriptPlayground: 3a3d41890752e12a9e1f40ad92b95082a96e9a92
+  FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  NativescriptPlayground: 18ec994a9e4fc94e4447f91f0b733f5277ccde0f
+  sqlite3: 4ba9cf1ded09a1442e17c92c82638787076d877d
 
 PODFILE CHECKSUM: a37b805dc9e4843e129b378e8888e22661d26b61
 
