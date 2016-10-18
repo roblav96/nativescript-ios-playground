@@ -61,11 +61,11 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 		return task.task
 	}
 	
-	open func getContactByIdAsync(Id: String) -> BFTask<CNContact> {
+	open func getContactByIdAsync(Id: String) -> BFTask<AnyObject> {
 		if (contactsStore == nil) {
 			contactsStore = CNContactStore()
 		}
-		let task = BFTaskCompletionSource<CNContact>()
+		let task = BFTaskCompletionSource<AnyObject>()
 		DispatchQueue.global(qos: .userInitiated).async(execute: { () -> Void in
 			var result: CNContact? = nil
 			do {
@@ -75,7 +75,7 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 				task.setError(error)
 			}
 			DispatchQueue.main.async(execute: { () -> Void in
-				task.setResult(result as CNContact?)
+				task.setResult(result as AnyObject?)
 			})
 		})
 		
