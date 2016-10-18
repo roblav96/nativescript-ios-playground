@@ -114,6 +114,7 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 			} catch {
 				print(error)
                 task.setError(error)
+//				rollback.memory = true
 			}
 		}
 		
