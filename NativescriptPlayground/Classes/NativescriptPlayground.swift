@@ -98,7 +98,7 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 	
     
     
-    open func sqlWriteAsync(Path: String, Statements: String) -> BFTask<AnyObject> {
+    open func sqlWriteAsync(Path: String, Statements: String, Version: Int) -> BFTask<AnyObject> {
         //		print("=======================================")
         //		print("=            SQLWRITEASYNC            =")
         //		print("=======================================")
@@ -111,6 +111,7 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
         let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: Path)
         queue.inTransaction { db, rollback in
             do {
+				db?.setUserVersion(UInt32(Version))
                 for statement in statements {
                     //					print("\n\n statement >", statement)
                     //					let query: String = statement["query"].stringValue
@@ -131,7 +132,7 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
         return task.task
     }
     
-    open func sqlReadAsync(Path: String, Statements: String) -> BFTask<AnyObject> {
+	open func sqlReadAsync(Path: String, Statements: String, Version: Int) -> BFTask<AnyObject> {
 //        print("======================================")
 //        print("=            SQLREADASYNC            =")
 //        print("======================================")
@@ -143,6 +144,7 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
         let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: Path)
         queue.inTransaction { db, rollback in
             do {
+				db?.setUserVersion(UInt32(Version))
                 var results: Array<FMResultSet> = []
                 for statement in statements {
                     let result = try db?.executeQuery(statement["query"].stringValue, values: statement["values"].array!)
