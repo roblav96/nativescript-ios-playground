@@ -108,8 +108,9 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 			do {
 				print(PATH)
 				print(STATEMENTS)
-				for i in 0..<STATEMENTS.count {
-					let statement: AnyObject = STATEMENTS[i]
+//				for i in 0..<STATEMENTS.count {
+				for statement in STATEMENTS {
+//					let statement: AnyObject = STATEMENTS[i]
 					print(statement)
 //					let query: String = statement.query
 //					let values: Array<String> = statement.values
