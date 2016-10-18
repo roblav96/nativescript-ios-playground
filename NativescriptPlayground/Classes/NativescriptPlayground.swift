@@ -4,6 +4,7 @@
 
 import Foundation
 import Contacts
+import SwiftyJSON
 import Bolts
 import FMDB
 
@@ -99,24 +100,27 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 	
 	
 	
-//	open func sqlWriteAsync(PATH: String, STATEMENTS: Array<AnyObject>) -> BFTask<AnyObject> {
-	open func sqlWriteAsync(PATH: String, STATEMENTS: [AnyObject]) -> BFTask<AnyObject> {
+	open func sqlWriteAsync(_Path: String, _Statements: String) -> BFTask<AnyObject> {
+		print("=======================================")
+		print("=            SQLWRITEASYNC            =")
+		print("=======================================")
+		
 		let task = BFTaskCompletionSource<AnyObject>()
 		
-		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: PATH)
+		let statements: JSON = JSON.parse(_Statements)
+		print("statements >", statements)
+		print("statements.array?.count >", statements.array?.count)
+		
+		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: _Path)
 		queue.inTransaction { db, rollback in
 			do {
-				print(PATH)
-				print(STATEMENTS)
-//				for i in 0..<STATEMENTS.count {
-				for statement in STATEMENTS {
-//					let statement: AnyObject = STATEMENTS[i]
+				print(_Path)
+				print(_Statements)
+				for statement in statements {
 					print(statement)
-//					let query: String = statement.query
-//					let values: Array<String> = statement.values
-					print(statement.query)
-					print(statement.values)
-                    try db?.executeUpdate(statement.query, values: statement.values)
+//					print(statement.query)
+//					print(statement.values)
+//                    try db?.executeUpdate(statement.query, values: statement.values)
                 }
                 task.setResult(true as AnyObject?)
 			} catch {

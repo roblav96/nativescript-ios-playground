@@ -15,11 +15,13 @@ PODS:
   - NativescriptPlayground (0.1.0):
     - Bolts
     - FMDB/standalone
+    - SwiftyJSON
   - sqlite3 (3.15.0):
     - sqlite3/common (= 3.15.0)
   - sqlite3/common (3.15.0)
   - sqlite3/fts (3.15.0):
     - sqlite3/common
+  - SwiftyJSON (3.1.1)
 
 DEPENDENCIES:
   - NativescriptPlayground (from `../`)
@@ -31,8 +33,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
-  NativescriptPlayground: 18ec994a9e4fc94e4447f91f0b733f5277ccde0f
+  NativescriptPlayground: e10db689326ce7dfa04e4eca4400d761f06b3f12
   sqlite3: 4ba9cf1ded09a1442e17c92c82638787076d877d
+  SwiftyJSON: f0be2e604f83e8405a624e9f891898bf6ed4e019
 
 PODFILE CHECKSUM: a37b805dc9e4843e129b378e8888e22661d26b61
 
