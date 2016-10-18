@@ -92,19 +92,23 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 	
 	
 	
-	open func sqlWriteAsync(_path: String) -> BFTask<AnyObject> {
+    open func sqlWriteAsync(_path: String, _statements: ) -> BFTask<AnyObject> {
 		let task = BFTaskCompletionSource<AnyObject>()
 		
 		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: _path)
 		queue.inTransaction { db, rollback in
 			do {
-				try db?.executeUpdate("INSERT INTO myTable VALUES (?)", values: [1])
+                for statement in _statements {
+                    
+                    
+                    try db?.executeUpdate("INSERT INTO myTable VALUES (?)", values: [1])
+                }
+                task.setResult(true as AnyObject?)
 			} catch {
 				print(error)
+                task.setError(error)
 			}
 		}
-
-		task.setResult(_path as AnyObject?)
 		
 		return task.task
 	}
