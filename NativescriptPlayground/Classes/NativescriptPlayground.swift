@@ -107,20 +107,19 @@ public typealias recognizeHandler = (_ error : NSError?) -> Void
 		
 		let task = BFTaskCompletionSource<AnyObject>()
 		
-		let statements: JSON = JSON.parse(Statements)
-		print("statements >", statements)
-		print("statements.array?.count >", statements.array?.count)
+		let statements: [JSON] = JSON.parse(Statements).array!
+//		print("\n\n statements >", statements)
 		
 		let queue: FMDatabaseQueue = FMDatabaseQueue.init(path: Path)
 		queue.inTransaction { db, rollback in
 			do {
-				print(Path)
-				print(Statements)
 				for statement in statements {
-					print(statement)
-//					print(statement.query)
-//					print(statement.values)
-//                    try db?.executeUpdate(statement.query, values: statement.values)
+					print("\n\n statement >", statement)
+					let query: String = statement["query"].stringValue
+					print("\n\n query >", query)
+					let values: [JSON] = statement["values"].array!
+					print("\n\n values >", values)
+                    try db?.executeUpdate(query, values: values)
                 }
                 task.setResult(true as AnyObject?)
 			} catch {
